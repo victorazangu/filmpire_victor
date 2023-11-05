@@ -12,6 +12,17 @@ module.exports = {
     sourceType: 'module',
   },
   plugins: ['react'],
+  overrides: [
+    {
+      files: ['*.test.js', 'test-utils/*', 'config/*.js'],
+      rules: {
+        'import/no-extraneous-dependencies': [
+          'error',
+          { devDependencies: true },
+        ],
+      },
+    },
+  ],
   rules: {
     'react/no-unescaped-entities': 0,
     'eslintreact/no-danger': 0,
